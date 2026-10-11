@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Wedding Invitation | Arjun &amp; Priya</title>
+<meta name="description" content="You are lovingly invited to the wedding celebrations of Arjun &amp; Priya">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Noto+Serif+Telugu:wght@400;500;600;700&family=Noto+Serif+Kannada:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="intro-active">
+
+<!-- ============ OPENING WRAPPER ============ -->
+<div class="intro-overlay" id="intro-overlay">
+  <!-- A soft, blurred copy of the same photo fills any spare space, so the opening page looks right on every screen shape -->
+  <img class="intro-bg" src="assets/images/intro-couple.jpg" alt="" aria-hidden="true">
+  <div class="intro-scrim" aria-hidden="true"></div>
+  <div class="intro-butterflies" id="intro-butterflies" aria-hidden="true"></div>
+
+  <div class="intro-content">
+    <p class="intro-eyebrow" data-i18n="introEyebrow">You're Invited</p>
+
+    <div class="intro-photo-frame">
+      <!-- INSERT OPENING PAGE COUPLE PHOTO HERE (assets/images/intro-couple.jpg) -->
+      <img class="intro-photo" src="assets/images/intro-couple.jpg" alt="The couple"
+           onerror="this.parentElement.style.display='none'">
+    </div>
+
+    <p class="intro-names">
+      <span data-config="groomName">Arjun</span> <span class="amp">&amp;</span> <span data-config="brideName">Priya</span>
+    </p>
+    <button type="button" class="intro-open-btn" id="intro-open-btn">
+      <span class="intro-butterfly-icon" aria-hidden="true">&#129419;</span>
+      <span data-i18n="introOpenBtn">Open Invitation</span>
+    </button>
+  </div>
+</div>
+
+<!-- ============ AUDIO ============ -->
+<audio id="wedding-audio" loop preload="auto">
+  <!-- INSERT WEDDING MUSIC FILE HERE -->
+  <source src="assets/music/wedding-music.mp3" type="audio/mpeg">
+</audio>
+<button id="music-toggle" class="music-btn" aria-label="Play wedding music" aria-pressed="false">
+  <span class="music-ring"></span>
+  <span class="music-icon">&#9835;</span>
+</button>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand" data-brand-initials="A &amp; P">A &amp; P</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#home" data-nav data-i18n="navHome">Home</a>
+      <a href="#couple" data-nav data-i18n="navCouple">Couple</a>
+      <a href="#events" data-nav data-i18n="navEvents">Events</a>
+      <a href="#wedding" data-nav data-i18n="navWedding">Wedding</a>
+      <a href="#family" data-nav data-i18n="navFamily">Family</a>
+      <a href="#gallery" data-nav data-i18n="navGallery">Gallery</a>
+      <a href="#rsvp" data-nav data-i18n="navRsvp">RSVP</a>
+    </nav>
+    <div class="lang-switch" id="lang-switch" role="group" aria-label="Choose language">
+      <button type="button" data-lang="en" class="lang-btn is-active">EN</button>
+      <button type="button" data-lang="hi" class="lang-btn">हि</button>
+      <button type="button" data-lang="te" class="lang-btn">తె</button>
+      <button type="button" data-lang="kn" class="lang-btn">ಕ</button>
+    </div>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-petals" aria-hidden="true"></div>
+  <div class="hero-rays" aria-hidden="true"></div>
+
+  <div class="divine-backdrop" aria-hidden="true">
+    <div class="divine-oval divine-oval-left">
+      <div class="divine-glow"></div>
+      <div class="divine-oval-frame">
+        <!-- INSERT LORD VENKATESHWARA IMAGE HERE -->
+        <img src="assets/images/venkateshwara.jpg" alt=""
+             onerror="this.parentElement.classList.add('img-placeholder-bg')">
+      </div>
+    </div>
+    <div class="divine-oval divine-oval-right">
+      <div class="divine-glow"></div>
+      <div class="divine-oval-frame">
+        <!-- INSERT GODDESS PADMAVATHI IMAGE HERE -->
+        <img src="assets/images/padmavathi.jpg" alt=""
+             onerror="this.parentElement.classList.add('img-placeholder-bg')">
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="grandparents-top">
+      <div class="grandparents-row">
+        <div class="grandparent-card">
+          <div class="blessing-portrait grand">
+            <!-- INSERT GRANDFATHER PHOTO HERE -->
+            <img src="assets/images/grandfather.jpg" alt="Grandfather" onerror="this.classList.add('img-placeholder'); this.alt='Grandfather photo placeholder — insert assets/images/grandfather.jpg'">
+          </div>
+          <p class="grandparent-name" data-config="grandfatherName">Pathange Balakrishna Rao</p>
+        </div>
+        <div class="grandparent-card">
+          <div class="blessing-portrait grand">
+            <!-- INSERT GRANDMOTHER PHOTO HERE -->
+            <img src="assets/images/grandmother.jpg" alt="Grandmother" onerror="this.classList.add('img-placeholder'); this.alt='Grandmother photo placeholder — insert assets/images/grandmother.jpg'">
+          </div>
+          <p class="grandparent-name" data-config="grandmotherName">Pathange Anusuya Bai</p>
+        </div>
+      </div>
+      <p class="grandparents-caption" data-i18n="grandparentsCaption">With the blessings of our grandparents</p>
+    </div>
+
+    <div class="mandala" aria-hidden="true">
+      <svg viewBox="0 0 200 200" class="mandala-svg">
+        <g fill="none" stroke="currentColor" stroke-width="0.6">
+          <circle cx="100" cy="100" r="90"/>
+          <circle cx="100" cy="100" r="78"/>
+          <circle cx="100" cy="100" r="40"/>
+          <g id="mandala-petals"></g>
+        </g>
+      </svg>
+    </div>
+
+    <p class="hero-blessing" data-i18n="heroBlessing">With the Divine Blessings of Lord Venkateshwara</p>
+
+    <div class="couple-foreground">
+      <span class="beam-inward beam-in-left" aria-hidden="true"></span>
+      <div class="blessing-portrait">
+        <!-- INSERT GROOM PHOTO HERE -->
+        <img src="assets/images/groom.jpg" alt="Groom" onerror="this.classList.add('img-placeholder'); this.alt='Groom photo placeholder'">
+      </div>
+      <span class="blessing-petal" aria-hidden="true">&#10084;</span>
+      <div class="blessing-portrait">
+        <!-- INSERT BRIDE PHOTO HERE -->
+        <img src="assets/images/bride.jpg" alt="Bride" onerror="this.classList.add('img-placeholder'); this.alt='Bride photo placeholder'">
+      </div>
+      <span class="beam-inward beam-in-right" aria-hidden="true"></span>
+    </div>
+    <p class="blessing-caption" data-i18n="blessingCaption">Blessing their beautiful beginning</p>
+
+    <p class="hero-eyebrow" data-i18n="heroEyebrow">The Wedding Of</p>
+    <h1 class="hero-title">
+      <span class="hero-name" data-config="groomName">Arjun</span>
+      <span class="hero-ampersand">&amp;</span>
+      <span class="hero-name" data-config="brideName">Priya</span>
+    </h1>
+    <p class="hero-date" data-config="weddingDateDisplay">12th December 2026</p>
+
+    <a href="#couple" class="hero-scroll" aria-label="Scroll to explore">
+      <span></span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 2. COUPLE INTRODUCTION ============ -->
+<section class="section couple-section" id="couple">
+  <p class="section-kicker" data-i18n="coupleKicker">Together with their families</p>
+  <h2 class="section-title reveal" data-i18n="coupleTitle">A Union Written in the Stars</h2>
+
+  <div class="couple-frames">
+    <div class="portrait-frame reveal">
+      <div class="portrait-arch">
+        <!-- INSERT GROOM PHOTO HERE -->
+        <img src="assets/images/groom.jpg" alt="Groom photograph" onerror="this.classList.add('img-placeholder'); this.alt='Groom photo placeholder — insert assets/images/groom.jpg'">
+      </div>
+      <h3 class="portrait-name" data-config="groomName">Arjun</h3>
+      <p class="portrait-role"><span data-i18n="sonOf">Son of</span> <span data-config="groomParents">Mr. &amp; Mrs. Sharma</span></p>
+    </div>
+
+    <div class="couple-heart reveal" aria-hidden="true">&#10084;</div>
+
+    <div class="portrait-frame reveal">
+      <div class="portrait-arch">
+        <!-- INSERT BRIDE PHOTO HERE -->
+        <img src="assets/images/bride.jpg" alt="Bride photograph" onerror="this.classList.add('img-placeholder'); this.alt='Bride photo placeholder — insert assets/images/bride.jpg'">
+      </div>
+      <h3 class="portrait-name" data-config="brideName">Priya</h3>
+      <p class="portrait-role"><span data-i18n="daughterOf">Daughter of</span> <span data-config="brideParents">Mr. &amp; Mrs. Iyer</span></p>
+    </div>
+  </div>
+
+  <p class="couple-tagline reveal" data-i18n="coupleTagline">Two Hearts &bull; One Beautiful Journey</p>
+</section>
+
+<!-- ============ 3. INVITATION MESSAGE ============ -->
+<section class="section invite-section">
+  <div class="invite-motif top" aria-hidden="true"></div>
+  <p class="section-kicker reveal" data-i18n="inviteKicker">With the blessings of the Almighty and the love of our families</p>
+  <p class="invite-message reveal">
+    <span data-i18n="invitePart1">We joyfully invite you and your family to celebrate the wedding ceremony of our beloved</span>
+    <strong data-config="groomName">Arjun</strong> <span data-i18n="andWord">and</span> <strong data-config="brideName">Priya</strong>,
+    <span data-i18n="invitePart2">and bless the couple as they begin their beautiful journey together.</span>
+  </p>
+  <div class="invite-motif bottom" aria-hidden="true"></div>
+</section>
+
+<!-- ============ 4. COUNTDOWN ============ -->
+<section class="section countdown-section">
+  <p class="section-kicker reveal" data-i18n="countdownKicker">Wedding Day</p>
+  <h2 class="countdown-date-block reveal">
+    <span id="cd-weekday">Saturday</span>
+    <span class="countdown-day" id="cd-day">12</span>
+    <span id="cd-monthyear">December 2026</span>
+  </h2>
+  <p class="countdown-lead reveal" data-i18n="countdownLead">Counting down to the beautiful beginning&hellip;</p>
+
+  <div class="countdown-timer reveal" id="countdown-timer" role="timer" aria-live="polite">
+    <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-label" data-i18n="labelDays">Days</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label" data-i18n="labelHours">Hours</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-label" data-i18n="labelMinutes">Minutes</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-label" data-i18n="labelSeconds">Seconds</span></div>
+  </div>
+  <p class="countdown-today" id="countdown-today" hidden data-i18n="countdownToday">Today is the Day! &#10084;</p>
+</section>
+
+<!-- ============ 5. EVENTS ============ -->
+<section class="section events-section" id="events">
+  <p class="section-kicker reveal" data-i18n="eventsKicker">A Celebration in Many Chapters</p>
+  <h2 class="section-title reveal" data-i18n="eventsTitle">Our Wedding Celebrations</h2>
+
+  <div class="events-timeline" id="events-timeline"><!-- populated by JS from WEDDING_CONFIG.events --></div>
+</section>
+
+<!-- ============ 6. MAIN CEREMONY ============ -->
+<section class="section ceremony-section" id="wedding">
+  <div class="ceremony-card reveal">
+    <p class="section-kicker" data-i18n="ceremonyKicker">The Wedding Ceremony</p>
+    <h2 class="ceremony-names">
+      <span data-config="groomName">Arjun</span> <span class="amp">&amp;</span> <span data-config="brideName">Priya</span>
+    </h2>
+    <div class="ceremony-details">
+      <div class="ceremony-detail">
+        <span class="detail-label" data-i18n="labelDate">Date</span>
+        <span class="detail-value" data-config="weddingDateDisplay">12th December 2026</span>
+      </div>
+      <div class="ceremony-detail">
+        <span class="detail-label" data-i18n="labelTime">Time</span>
+        <span class="detail-value" data-config="weddingTime">10:30 AM (Muhurtham)</span>
+      </div>
+      <div class="ceremony-detail">
+        <span class="detail-label" data-i18n="labelVenue">Venue</span>
+        <span class="detail-value" data-config="weddingVenue">Sri Kalyana Mandapam</span>
+      </div>
+      <div class="ceremony-detail">
+        <span class="detail-label" data-i18n="labelAddress">Address</span>
+        <span class="detail-value" data-config="weddingAddress">123 Temple Street, Chennai, Tamil Nadu</span>
+      </div>
+    </div>
+    <a class="btn btn-gold" id="map-link" href="#" target="_blank" rel="noopener">
+      <span class="map-pin" aria-hidden="true">&#9673;</span> <span data-i18n="viewLocation">View Location</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 7. FAMILY WELCOME ============ -->
+<section class="section family-section" id="family">
+  <p class="section-kicker reveal" data-i18n="familyKicker">With Love, From Our Family</p>
+  <h2 class="section-title reveal" data-i18n="familyTitle">Our family warmly welcomes you to share in this joyous celebration</h2>
+
+  <div class="parents-row reveal">
+    <div class="family-card">
+      <div class="family-photo">
+        <!-- INSERT FATHER PHOTO HERE -->
+        <img src="assets/images/father.jpg" alt="Father photograph" onerror="this.classList.add('img-placeholder'); this.alt='Father photo placeholder — insert assets/images/father.jpg'">
+      </div>
+      <p class="family-name" data-config="fatherName">Mr. Ramesh Sharma</p>
+    </div>
+    <span class="family-amp" aria-hidden="true">&amp;</span>
+    <div class="family-card">
+      <div class="family-photo">
+        <!-- INSERT MOTHER PHOTO HERE -->
+        <img src="assets/images/mother.jpg" alt="Mother photograph" onerror="this.classList.add('img-placeholder'); this.alt='Mother photo placeholder — insert assets/images/mother.jpg'">
+      </div>
+      <p class="family-name" data-config="motherName">Mrs. Lakshmi Sharma</p>
+    </div>
+  </div>
+  <p class="family-tagline reveal" data-i18n="familyTagline">With the blessings, love and happiness of our beloved parents</p>
+
+  <div class="parents-row reveal uncle-aunty-row">
+    <div class="family-card">
+      <div class="family-photo">
+        <!-- INSERT GROOM'S UNCLE PHOTO HERE -->
+        <img src="assets/images/uncle.jpg" alt="Uncle photograph" onerror="this.classList.add('img-placeholder'); this.alt='Uncle photo placeholder — insert assets/images/uncle.jpg'">
+      </div>
+      <p class="family-name" data-config="uncleName">Pathange Naresh</p>
+    </div>
+    <span class="family-amp" aria-hidden="true">&amp;</span>
+    <div class="family-card">
+      <div class="family-photo">
+        <!-- INSERT GROOM'S AUNTY PHOTO HERE -->
+        <img src="assets/images/aunty.jpg" alt="Aunty photograph" onerror="this.classList.add('img-placeholder'); this.alt='Aunty photo placeholder — insert assets/images/aunty.jpg'">
+      </div>
+      <p class="family-name" data-config="auntyName">Aruna</p>
+    </div>
+  </div>
+  <p class="uncle-aunty-caption reveal" data-i18n="uncleAuntyCaption">Uncle &amp; Aunty of the Groom</p>
+
+  <div class="siblings-row" id="siblings-row"><!-- populated by JS from WEDDING_CONFIG.siblings --></div>
+
+  <div class="siblings-group reveal">
+    <div class="siblings-group-photo">
+      <!-- INSERT GROUP PHOTO OF ALL SIBLINGS HERE -->
+      <img src="assets/images/siblings-group.jpg" alt="All siblings together" onerror="this.classList.add('img-placeholder'); this.alt='Siblings group photo placeholder — insert assets/images/siblings-group.jpg'">
+    </div>
+    <p class="siblings-group-caption" data-i18n="siblingsGroupCaption">Together, always</p>
+  </div>
+
+  <div class="relatives-invite reveal">
+    <h3 data-i18n="relativesInviteTitle">To Our Beloved Relatives</h3>
+    <p data-i18n="relativesInviteText">With hearts full of joy, we warmly invite each one of you — our dear relatives near and far — to bless this couple with your presence, love and good wishes.</p>
+  </div>
+
+  <h3 class="pathange-family-heading reveal" data-i18n="eldersHeading">With the Blessings of Our Elders</h3>
+  <div class="extra-family-row" id="elders-row">
+    <div class="extra-family-card reveal is-visible">
+      <div class="extra-family-photo">
+        <!-- INSERT ELDER 1 PHOTO HERE -->
+        <img src="assets/images/elder-1.jpg" alt="Elder of the family" onerror="this.classList.add('img-placeholder'); this.alt='Elder photo placeholder — insert assets/images/elder-1.jpg'">
+      </div>
+    </div>
+    <div class="extra-family-card reveal is-visible">
+      <div class="extra-family-photo">
+        <!-- INSERT ELDER 2 PHOTO HERE -->
+        <img src="assets/images/elder-2.jpg" alt="Elder of the family" onerror="this.classList.add('img-placeholder'); this.alt='Elder photo placeholder — insert assets/images/elder-2.jpg'">
+      </div>
+    </div>
+  </div>
+
+  <h3 class="pathange-family-heading reveal" data-i18n="pathangeFamilyHeading">Pathange Family</h3>
+  <div class="extra-family-row" id="extra-family-row"><!-- populated by JS from WEDDING_CONFIG.extraFamily --></div>
+
+  <div class="family-message reveal">
+    <p data-i18n="familyMsg1">From our home to yours, we warmly welcome you to celebrate this precious beginning with us.</p>
+    <p data-i18n="familyMsg2">Your presence, blessings and love will make this special occasion even more meaningful.</p>
+    <p class="family-signature"><span data-i18n="withLove">With love,</span><br><span data-config="familySurname">The Sharma</span> <span data-i18n="familyWord">Family</span></p>
+  </div>
+</section>
+
+<!-- ============ 8. GALLERY ============ -->
+<section class="section gallery-section" id="gallery">
+  <p class="section-kicker reveal" data-i18n="galleryKicker">Beautiful Memories</p>
+  <h2 class="section-title reveal" data-i18n="galleryTitle">Beautiful Memories</h2>
+
+  <div class="gallery-grid" id="gallery-grid"><!-- populated by JS from WEDDING_CONFIG.gallery --></div>
+</section>
+
+<!-- ============ SLIDESHOW ============ -->
+<section class="section slideshow-section">
+  <p class="section-kicker reveal" data-i18n="slideshowKicker">Relive Every Moment</p>
+  <h2 class="section-title reveal" data-i18n="slideshowTitle">Our Journey in Pictures</h2>
+
+  <div class="slideshow reveal" id="slideshow">
+    <div class="slideshow-track" id="slideshow-track"><!-- populated by JS --></div>
+    <button class="slideshow-nav slideshow-prev" id="slideshow-prev" aria-label="Previous photo">&#10094;</button>
+    <button class="slideshow-nav slideshow-next" id="slideshow-next" aria-label="Next photo">&#10095;</button>
+    <div class="slideshow-dots" id="slideshow-dots"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#10094;</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo">&#10095;</button>
+</div>
+
+<!-- ============ 9. OUR JOURNEY ============ -->
+<section class="section story-section">
+  <p class="section-kicker reveal" data-i18n="storyKicker">Our Journey</p>
+  <h2 class="section-title reveal" data-i18n="storyTitle">Our Journey</h2>
+
+  <div class="story-timeline">
+    <div class="story-item reveal">
+      <h3 data-i18n="storyH1">Where It All Began</h3>
+      <p data-config="storyOne">A chance introduction through family friends blossomed into quiet conversations, shared laughter, and the gentle realisation that they had found something rare.</p>
+    </div>
+    <div class="story-item reveal">
+      <h3 data-i18n="storyH2">Two Families Became One</h3>
+      <p data-config="storyTwo">With elders' blessings and hearts full of joy, both families came together — and what began as two stories quietly became one.</p>
+    </div>
+    <div class="story-item reveal">
+      <h3 data-i18n="storyH3">And Now, Forever Begins</h3>
+      <p data-config="storyThree">Now, surrounded by the people they love most, they begin the most beautiful chapter of their story together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. DIVINE BLESSING ============ -->
+<section class="section blessing-section">
+  <div class="deity-frame small">
+    <div class="deity-halo" aria-hidden="true"></div>
+    <!-- INSERT A DIFFERENT LORD VENKATESHWARA IMAGE HERE (separate from the hero background photo) -->
+    <img src="assets/images/venkateshwara-blessing.jpg" alt="Lord Venkateshwara" class="deity-img" onerror="this.classList.add('img-placeholder'); this.alt='Lord Venkateshwara image placeholder — insert assets/images/venkateshwara-blessing.jpg'">
+  </div>
+  <p class="blessing-text reveal">
+    <span data-i18n="blessingPart1">May Lord Venkateshwara bless</span> <span data-config="groomName">Arjun</span> &amp; <span data-config="brideName">Priya</span>
+    <span data-i18n="blessingPart2">with a lifetime filled with love, happiness, prosperity and togetherness.</span>
+  </p>
+</section>
+
+<!-- ============ 11. FINAL COUPLE ============ -->
+<section class="section final-section">
+  <div class="final-photo">
+    <!-- INSERT BEST COUPLE PHOTO HERE -->
+    <img src="assets/images/couple.jpg" alt="Couple photograph" onerror="this.classList.add('img-placeholder'); this.alt='Best couple photo placeholder — insert assets/images/couple.jpg'">
+    <div class="final-overlay">
+      <p class="final-names">
+        <span data-config="groomName">Arjun</span> <span class="heart">&#10084;</span> <span data-config="brideName">Priya</span>
+      </p>
+      <p class="final-tag" data-i18n="finalTag">A Beautiful Beginning to Forever</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. SEND WISHES ============ -->
+<section class="section rsvp-section" id="rsvp">
+  <p class="section-kicker reveal" data-i18n="rsvpKicker">We Would Love to Celebrate With You</p>
+  <h2 class="section-title reveal" data-i18n="rsvpTitle">We Would Love to Celebrate With You</h2>
+
+  <form class="rsvp-form reveal" id="rsvp-form">
+    <label>
+      <span data-i18n="formMessage">Message</span>
+      <textarea name="message" rows="4" placeholder="Write your wishes and blessings for the couple..." required></textarea>
+    </label>
+    <button type="submit" class="btn btn-gold" data-i18n="sendWishesBtn">Send Wishes</button>
+    <p class="rsvp-note" id="rsvp-note" data-i18n="rsvpNote">Can't wait to celebrate with you!</p>
+  </form>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-petals" aria-hidden="true"></div>
+  <p class="footer-thanks" data-i18n="footerThanks">Thank you for being a part of our happiness.</p>
+  <p class="footer-signature"><span data-i18n="withLove">With love,</span><br><span data-config="familySurname">The Sharma</span> <span data-i18n="familyWord">Family</span></p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

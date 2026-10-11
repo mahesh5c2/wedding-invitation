@@ -1,0 +1,1015 @@
+/* =====================================================
+   WEDDING INVITATION — Arjun & Priya
+   Palette: ivory #FBF6EC, cream #F3E8D3, gold #C9A24B,
+            deep gold #9C7A2E, maroon #6B1420, red-accent #A32638
+   Type: Cinzel (display), Cormorant Garamond (body/script)
+===================================================== */
+
+:root{
+  --ivory:#FBF6EC;
+  --cream:#F3E8D3;
+  --gold:#C9A24B;
+  --gold-light:#E7CE93;
+  --gold-deep:#9C7A2E;
+  --maroon:#6B1420;
+  --maroon-deep:#4A0D16;
+  --red:#A32638;
+  --ink:#3A2C1E;
+  --ink-soft:#6b5b47;
+  --shadow:rgba(74,13,22,0.18);
+  --font-display:'Cinzel', 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Noto Serif Kannada', serif;
+  --font-script:'Cormorant Garamond', 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Noto Serif Kannada', serif;
+  --font-body:'Marcellus', 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Noto Serif Kannada', serif;
+  --dur:0.8s;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.6;
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(201,162,75,0.06), transparent 60%);
+}
+
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+button{font-family:inherit; cursor:pointer;}
+
+.img-placeholder{
+  background:repeating-linear-gradient(45deg, var(--cream), var(--cream) 10px, #eee0c4 10px, #eee0c4 20px);
+  min-height:180px;
+  color:var(--maroon);
+  font-size:0.75rem;
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+}
+
+/* ---------- Section base ---------- */
+.section{
+  position:relative;
+  padding:5.5rem 1.5rem;
+  max-width:1100px;
+  margin:0 auto;
+  text-align:center;
+}
+.section-kicker{
+  font-family:var(--font-script);
+  font-style:italic;
+  font-size:1.15rem;
+  color:var(--gold-deep);
+  margin:0 0 0.6rem;
+}
+.section-title{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(1.6rem, 4vw, 2.4rem);
+  color:var(--maroon);
+  margin:0 0 2.5rem;
+  letter-spacing:0.02em;
+}
+.section-title::after{
+  content:"";
+  display:block;
+  width:70px;
+  height:2px;
+  margin:0.9rem auto 0;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Gold divider motif under kicker/title */
+
+/* ---------- Photo animations (site-wide) ---------- */
+.portrait-arch, .family-photo, .sibling-photo, .event-photo,
+.blessing-portrait, .siblings-group-photo, .final-photo, .divine-oval-frame,
+.gallery-item, .slideshow-frame, .extra-family-photo{
+  transition:transform 0.45s ease, box-shadow 0.45s ease;
+}
+.portrait-arch:hover, .family-photo:hover, .sibling-photo:hover, .event-photo:hover,
+.blessing-portrait:hover, .siblings-group-photo:hover, .gallery-item:hover, .extra-family-photo:hover{
+  transform:scale(1.045);
+}
+.final-photo:hover img{ transform:scale(1.03); }
+.final-photo img{ transition:transform 0.6s ease; }
+.portrait-arch img, .family-photo img, .sibling-photo img, .event-photo img,
+.siblings-group-photo img, .extra-family-photo img{
+  transition:transform 0.5s ease;
+}
+.portrait-arch:hover img, .family-photo:hover img, .sibling-photo:hover img,
+.event-photo:hover img, .siblings-group-photo:hover img, .extra-family-photo:hover img{
+  transform:scale(1.08);
+}
+/* Photo containers fade + scale in as they're revealed on scroll */
+.photo-reveal{ opacity:0; transform:translateY(18px) scale(0.94); transition:opacity 0.7s ease, transform 0.7s ease; }
+.photo-reveal.is-visible{ opacity:1; transform:translateY(0) scale(1); }
+
+
+.reveal{ opacity:0; transform:translateY(24px); transition:opacity 0.9s ease, transform 0.9s ease; }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.9rem 2rem;
+  border-radius:999px;
+  font-family:var(--font-display);
+  font-size:0.85rem;
+  letter-spacing:0.04em;
+  border:1px solid var(--gold);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-gold{
+  background:linear-gradient(180deg, var(--gold-light), var(--gold));
+  color:var(--maroon-deep);
+  box-shadow:0 6px 18px rgba(156,122,46,0.35);
+}
+.btn-gold:hover, .btn-gold:focus-visible{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(156,122,46,0.45); }
+.btn-whatsapp{
+  background:var(--maroon);
+  color:var(--ivory);
+  border-color:var(--maroon);
+}
+.btn-whatsapp:hover, .btn-whatsapp:focus-visible{ transform:translateY(-2px); }
+
+:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
+
+/* ---------- Music button ---------- */
+/* ---------- Opening wrapper (splash screen) ---------- */
+body.intro-active{ overflow:hidden; height:100vh; }
+.intro-overlay{
+  position:fixed; inset:0; z-index:300;
+  display:flex; align-items:center; justify-content:center;
+  overflow-y:auto; -webkit-overflow-scrolling:touch;
+  background:linear-gradient(180deg, var(--cream) 0%, var(--ivory) 70%);
+  transition:opacity 0.9s ease, visibility 0.9s ease;
+}
+.intro-overlay.intro-closed{ opacity:0; visibility:hidden; pointer-events:none; }
+
+/* Blurred backdrop made from the same photo */
+.intro-bg{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover;
+  filter:blur(22px) saturate(1.1);
+  transform:scale(1.15);
+  opacity:0.75;
+  pointer-events:none;
+}
+.intro-scrim{
+  position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(circle at 50% 45%, rgba(251,246,236,0.3), rgba(251,246,236,0.82) 78%);
+}
+
+.intro-content{
+  position:relative; z-index:2; text-align:center;
+  width:100%; max-width:900px; margin:auto;
+  padding:1.2rem 1rem;
+  display:flex; flex-direction:column; align-items:center;
+  transition:opacity 0.6s ease, transform 0.9s ease;
+}
+/* Opening: the invitation gently zooms toward you and fades away */
+.intro-overlay.intro-opening .intro-content{ opacity:0; transform:scale(1.12); }
+
+.intro-eyebrow{
+  font-family:var(--font-script); font-style:italic; color:var(--gold-deep);
+  font-size:1.15rem; margin:0 0 0.5rem;
+}
+
+/* The couple's photo: wide frame on tablets/desktops, taller frame on phones.
+   object-fit:cover + a focus point keeps both faces and hands in view. */
+.intro-photo-frame{
+  width:min(92vw, 860px);
+  aspect-ratio:2 / 1;
+  max-height:52vh;
+  border-radius:18px;
+  overflow:hidden;
+  border:3px solid var(--gold);
+  box-shadow:0 0 0 6px rgba(251,246,236,0.7), 0 18px 40px rgba(74,13,22,0.28);
+  background:var(--cream);
+  margin:0.2rem 0 1.1rem;
+}
+.intro-photo{
+  display:block; width:100%; height:100%;
+  object-fit:cover; object-position:50% 38%;
+  transition:transform 0.9s ease;
+}
+.intro-overlay.intro-opening .intro-photo{ transform:scale(1.08); }
+
+.intro-names{
+  font-family:var(--font-display); font-weight:600; color:var(--maroon);
+  font-size:clamp(1.1rem, 4.4vw, 1.9rem); line-height:1.3;
+  margin:0 0 1.3rem;
+  text-shadow:0 1px 0 rgba(255,255,255,0.7);
+}
+.intro-names .amp{ color:var(--gold-deep); font-size:0.8em; }
+
+.intro-open-btn{
+  display:inline-flex; align-items:center; gap:0.7rem;
+  padding:0.95rem 2.1rem;
+  border-radius:999px;
+  border:1px solid var(--gold);
+  background:linear-gradient(180deg, var(--gold-light), var(--gold));
+  color:var(--maroon-deep);
+  font-family:var(--font-display); font-size:0.95rem; letter-spacing:0.03em;
+  box-shadow:0 8px 22px rgba(156,122,46,0.4);
+  animation:introPulse 2.4s ease-in-out infinite;
+}
+.intro-open-btn:hover{ animation-play-state:paused; transform:translateY(-2px); }
+@keyframes introPulse{
+  0%,100%{ box-shadow:0 8px 22px rgba(156,122,46,0.4); }
+  50%{ box-shadow:0 10px 30px rgba(156,122,46,0.6); }
+}
+.intro-butterfly-icon{ font-size:1.3rem; display:inline-block; animation:butterflyFlap 1.4s ease-in-out infinite; }
+@keyframes butterflyFlap{
+  0%,100%{ transform:scaleX(1) translateY(0); }
+  50%{ transform:scaleX(0.82) translateY(-2px); }
+}
+.intro-butterflies{ position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+.intro-butterfly{
+  position:absolute; top:50%; left:50%; font-size:1.6rem;
+  animation-name:butterflyFlyOut; animation-timing-function:ease-out; animation-fill-mode:forwards;
+}
+@keyframes butterflyFlyOut{
+  0%{ transform:translate(-50%,-50%) translate(0,0) scale(0.6) rotate(0deg); opacity:1; }
+  100%{ transform:translate(-50%,-50%) translate(var(--bx), var(--by)) scale(1.1) rotate(var(--br)); opacity:0; }
+}
+
+/* Phones (portrait): a taller frame so both faces stay large and clear */
+@media (max-width:640px){
+  .intro-photo-frame{ width:90vw; aspect-ratio:8 / 7; max-height:46vh; border-radius:16px; }
+  .intro-photo{ object-position:48% 40%; }
+}
+/* Phones turned sideways / very short screens */
+@media (max-height:520px){
+  .intro-eyebrow{ display:none; }
+  .intro-photo-frame{ width:min(70vw, 560px); max-height:44vh; margin-bottom:0.7rem; }
+  .intro-names{ margin-bottom:0.8rem; }
+  .intro-content{ padding:0.6rem 1rem; }
+}
+
+.music-btn{
+  position:fixed;
+  bottom:1.25rem;
+  right:1.25rem;
+  z-index:80;
+  width:52px; height:52px;
+  border-radius:50%;
+  background:var(--maroon);
+  color:var(--gold-light);
+  border:1px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+.music-ring{
+  position:absolute; inset:-6px;
+  border-radius:50%;
+  border:1px solid var(--gold);
+  opacity:0;
+}
+.music-btn.playing .music-ring{ animation:musicPulse 1.8s ease-out infinite; opacity:1; }
+@keyframes musicPulse{
+  0%{ transform:scale(0.9); opacity:0.7; }
+  100%{ transform:scale(1.5); opacity:0; }
+}
+
+/* ---------- Nav ---------- */
+.site-nav{
+  position:fixed; top:0; left:0; right:0; z-index:70;
+  background:rgba(251,246,236,0);
+  transition:background 0.4s ease, box-shadow 0.4s ease;
+}
+.site-nav.scrolled{
+  background:rgba(251,246,236,0.94);
+  backdrop-filter:blur(6px);
+  box-shadow:0 2px 14px rgba(74,13,22,0.08);
+}
+.nav-inner{
+  max-width:1200px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0.9rem 1.5rem;
+}
+.nav-brand{
+  font-family:var(--font-display);
+  font-size:1.1rem;
+  color:var(--maroon);
+  letter-spacing:0.05em;
+}
+.nav-links{ display:flex; gap:1.8rem; }
+.nav-links a{
+  font-size:0.85rem;
+  letter-spacing:0.03em;
+  color:var(--ink);
+  position:relative;
+  padding:0.3rem 0;
+}
+.nav-links a::after{
+  content:""; position:absolute; left:0; bottom:0; width:0; height:1px;
+  background:var(--gold-deep); transition:width 0.3s ease;
+}
+.nav-links a:hover::after, .nav-links a:focus-visible::after{ width:100%; }
+
+.lang-switch{
+  display:flex; gap:0.3rem; margin-left:0.5rem;
+}
+.lang-btn{
+  font-family:var(--font-display);
+  font-size:0.75rem;
+  padding:0.35rem 0.6rem;
+  border-radius:999px;
+  border:1px solid var(--gold-light);
+  background:transparent;
+  color:var(--ink-soft);
+  transition:background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.lang-btn.is-active{
+  background:var(--maroon);
+  border-color:var(--maroon);
+  color:var(--gold-light);
+}
+@media (max-width:860px){
+  .lang-switch{ margin-left:auto; margin-right:0.5rem; }
+}
+
+.nav-toggle{
+  display:none;
+  flex-direction:column; gap:5px;
+  background:none; border:none; padding:0.4rem;
+}
+.nav-toggle span{ width:24px; height:2px; background:var(--maroon); display:block; }
+
+@media (max-width:860px){
+  .nav-links{
+    position:fixed; top:0; right:0; height:100vh; width:min(78vw, 320px);
+    background:var(--ivory);
+    flex-direction:column;
+    padding:6rem 2rem 2rem;
+    box-shadow:-8px 0 24px rgba(0,0,0,0.15);
+    transform:translateX(100%);
+    transition:transform 0.4s ease;
+    gap:1.6rem;
+  }
+  .nav-links.open{ transform:translateX(0); }
+  .nav-toggle{ display:flex; }
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center;
+  padding:6rem 1.5rem 3rem;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(201,162,75,0.18), transparent 55%),
+    linear-gradient(180deg, var(--cream) 0%, var(--ivory) 60%);
+  overflow:hidden;
+}
+.hero-content{ position:relative; z-index:2; max-width:640px; }
+
+.hero-rays{
+  position:absolute; inset:0;
+  background:conic-gradient(from 0deg, transparent 0deg, rgba(201,162,75,0.10) 8deg, transparent 16deg);
+  animation:rayspin 40s linear infinite;
+  opacity:0.6;
+}
+@keyframes rayspin{ to{ transform:rotate(360deg); } }
+
+.hero-petals{ position:absolute; inset:0; pointer-events:none; z-index:1; }
+.global-petals{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:65;
+  overflow:hidden;
+}
+.petal{
+  position:absolute; top:-5%;
+  width:14px; height:14px;
+  background:radial-gradient(circle at 30% 30%, #e5a9b0, var(--red));
+  border-radius:70% 0 70% 0;
+  opacity:0.8;
+  animation:petalFall linear infinite;
+}
+@keyframes petalFall{
+  to{ transform:translateY(115vh) translateX(var(--drift,20px)) rotate(360deg); }
+}
+
+.mandala{ width:120px; height:120px; margin:0 auto 1rem; color:var(--gold-deep); opacity:0.85; }
+.mandala-svg{ width:100%; height:100%; animation:mandalaSpin 60s linear infinite; }
+@keyframes mandalaSpin{ to{ transform:rotate(360deg); } }
+
+.hero-blessing{
+  font-family:var(--font-script);
+  font-style:italic;
+  font-size:1.25rem;
+  color:var(--maroon);
+  margin:0 0 1.6rem;
+  animation:fadeIn 1.4s ease both;
+}
+
+.deity-frame{
+  position:relative;
+  width:180px; height:180px;
+  margin:0 auto 1.8rem;
+  border-radius:50%;
+  overflow:visible;
+}
+.deity-frame.small{ width:140px; height:140px; margin:0 auto 2rem; }
+.deity-halo{
+  position:absolute; inset:-14px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(231,206,147,0.55), rgba(231,206,147,0) 70%);
+  animation:haloGlow 4s ease-in-out infinite;
+}
+@keyframes haloGlow{
+  0%,100%{ opacity:0.6; transform:scale(1); }
+  50%{ opacity:1; transform:scale(1.08); }
+}
+.deity-img{
+  position:relative; z-index:1;
+  width:100%; height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid var(--gold);
+  box-shadow:0 0 30px rgba(201,162,75,0.5);
+  animation:deityBreathe 6s ease-in-out infinite;
+}
+@keyframes deityBreathe{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.03); }
+}
+.deity-img.img-placeholder{ border-radius:50%; }
+
+.blessing-group{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:1.6rem;
+}
+
+/* Grandparents banner at the very top of the hero */
+.grandparents-top{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:1.6rem;
+}
+.grandparents-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:1.4rem;
+}
+.grandparent-card{ display:flex; flex-direction:column; align-items:center; }
+.grandparent-name{
+  font-family:var(--font-script);
+  font-style:italic;
+  font-size:0.8rem;
+  color:var(--ink-soft);
+  margin:0.35rem 0 0;
+  max-width:110px;
+  text-align:center;
+}
+.grandparents-caption{
+  font-family:var(--font-script);
+  font-style:italic;
+  font-size:0.85rem;
+  color:var(--ink-soft);
+  margin:0.5rem 0 0;
+}
+
+/* Divine backdrop: Venkateshwara & Padmavathi in elegant oval temple frames,
+   sitting behind the couple like they're blessing them from either side */
+.divine-backdrop{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 2%;
+}
+.divine-oval{
+  position:relative;
+  width:34vw;
+  max-width:280px;
+  aspect-ratio:3/4;
+  animation:divineDrift 7s ease-in-out infinite;
+}
+.divine-oval-right{ animation-delay:0.6s; }
+.divine-oval-frame{
+  position:relative;
+  width:100%;
+  height:100%;
+  border-radius:50%/42%;
+  overflow:hidden;
+  border:3px solid var(--gold);
+  box-shadow:0 0 0 6px rgba(251,246,236,0.55), 0 18px 40px rgba(74,13,22,0.25);
+  opacity:0.94;
+}
+.divine-oval-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+}
+@keyframes divineDrift{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-6px); }
+}
+.img-placeholder-bg{
+  background:radial-gradient(circle at 50% 30%, rgba(201,162,75,0.4), transparent 70%);
+  height:100%; width:100%;
+}
+.divine-glow{
+  position:absolute;
+  inset:-14%;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(231,206,147,0.5), transparent 70%);
+  filter:blur(14px);
+  animation:haloGlow 5s ease-in-out infinite;
+}
+
+/* Couple foreground: sits on top of the divine backdrop, being blessed */
+.couple-foreground{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:1rem;
+  padding:1rem 1.6rem;
+  margin:0 auto;
+  background:rgba(251,246,236,0.72);
+  backdrop-filter:blur(2px);
+  border:1px solid var(--gold-light);
+  border-radius:999px;
+  box-shadow:0 10px 28px rgba(74,13,22,0.14);
+  width:fit-content;
+}
+.beam-inward{
+  position:absolute; top:50%; width:34px; height:2px;
+  background:linear-gradient(90deg, rgba(201,162,75,0.75), rgba(201,162,75,0));
+  animation:beamGlow 3s ease-in-out infinite;
+}
+.beam-in-left{ left:-34px; transform:translateY(-50%); }
+.beam-in-right{ right:-34px; transform:translateY(-50%) rotate(180deg); }
+@keyframes beamGlow{
+  0%,100%{ opacity:0.45; }
+  50%{ opacity:0.9; }
+}
+.blessing-portrait{
+  width:108px; height:108px;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid var(--gold);
+  box-shadow:0 6px 18px rgba(201,162,75,0.45);
+  animation:blessGlow 4s ease-in-out infinite;
+}
+.blessing-portrait img{ width:100%; height:100%; object-fit:cover; object-position:center; }
+.blessing-portrait.img-placeholder{ min-height:0; font-size:0.6rem; line-height:1.1; padding:0.3rem; }
+.blessing-portrait.grand{ width:84px; height:84px; }
+@keyframes blessGlow{
+  0%,100%{ box-shadow:0 4px 14px rgba(201,162,75,0.4); }
+  50%{ box-shadow:0 4px 22px rgba(201,162,75,0.75); }
+}
+.blessing-petal{ color:var(--red); font-size:1rem; animation:heartbeat 2.2s ease-in-out infinite; }
+.blessing-caption{
+  font-family:var(--font-script);
+  font-style:italic;
+  font-size:0.9rem;
+  color:var(--gold-deep);
+  margin:0.7rem 0 0;
+}
+
+.hero-eyebrow{
+  font-family:var(--font-script);
+  font-style:italic;
+  color:var(--ink-soft);
+  font-size:1rem;
+  margin:0 0 0.4rem;
+}
+.hero-title{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(2.2rem, 8vw, 3.6rem);
+  color:var(--maroon);
+  margin:0 0 0.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.5em;
+  flex-wrap:wrap;
+}
+.hero-name{ opacity:0; animation:nameIn 0.9s ease forwards; }
+.hero-title .hero-name:first-child{ animation-delay:0.3s; }
+.hero-ampersand{
+  color:var(--gold-deep); font-size:0.7em;
+  opacity:0; animation:heartIn 0.7s ease forwards; animation-delay:1.3s;
+}
+.hero-title .hero-name:last-child{ animation-delay:1.7s; }
+@keyframes nameIn{ from{ opacity:0; transform:translateY(14px);} to{ opacity:1; transform:translateY(0);} }
+@keyframes heartIn{ from{ opacity:0; transform:scale(0.5);} to{ opacity:1; transform:scale(1);} }
+
+.hero-date{
+  font-family:var(--font-script);
+  font-size:1.3rem;
+  color:var(--ink-soft);
+  margin:0 0 2rem;
+}
+
+.hero-scroll{
+  display:inline-block;
+  width:24px; height:40px;
+  border:1px solid var(--gold-deep);
+  border-radius:14px;
+  position:relative;
+}
+.hero-scroll span{
+  position:absolute; top:6px; left:50%; width:4px; height:8px;
+  background:var(--gold-deep); border-radius:2px;
+  transform:translateX(-50%);
+  animation:scrollDot 1.8s ease infinite;
+}
+@keyframes scrollDot{
+  0%{ opacity:1; top:6px; } 100%{ opacity:0; top:20px; }
+}
+
+@keyframes fadeIn{ from{ opacity:0; } to{ opacity:1; } }
+
+/* ---------- Couple section ---------- */
+.couple-frames{
+  display:flex; align-items:center; justify-content:center;
+  gap:2.5rem; flex-wrap:wrap; margin-bottom:1.8rem;
+}
+.portrait-frame{ width:220px; }
+.portrait-arch{
+  width:100%; aspect-ratio:3/4;
+  border-radius:110px 110px 12px 12px;
+  overflow:hidden;
+  border:4px solid var(--gold);
+  box-shadow:0 14px 30px var(--shadow);
+  position:relative;
+}
+.portrait-arch img{ width:100%; height:100%; object-fit:cover; }
+.portrait-name{
+  font-family:var(--font-display);
+  font-size:1.3rem; color:var(--maroon);
+  margin:1rem 0 0.2rem;
+}
+.portrait-role{ font-size:0.95rem; color:var(--ink-soft); margin:0; }
+.couple-heart{
+  font-size:2rem; color:var(--red);
+  animation:heartbeat 2.2s ease-in-out infinite;
+}
+@keyframes heartbeat{
+  0%,100%{ transform:scale(1); } 50%{ transform:scale(1.15); }
+}
+.couple-tagline{
+  font-family:var(--font-script); font-style:italic;
+  font-size:1.4rem; color:var(--gold-deep);
+}
+
+/* ---------- Invitation message ---------- */
+.invite-section{ background:var(--cream); border-radius:0; }
+.invite-motif{ width:60px; height:2px; margin:0 auto 1.5rem; background:var(--gold); }
+.invite-motif.bottom{ margin:1.5rem auto 0; }
+.invite-message{
+  font-family:var(--font-script);
+  font-size:1.35rem;
+  line-height:1.8;
+  max-width:640px; margin:0 auto;
+  color:var(--ink);
+}
+
+/* ---------- Countdown ---------- */
+.countdown-date-block{
+  font-family:var(--font-display);
+  color:var(--maroon);
+  display:flex; flex-direction:column; align-items:center; gap:0.2rem;
+  margin:0 0 1rem;
+}
+.countdown-day{ font-size:3rem; color:var(--gold-deep); }
+.countdown-lead{ font-family:var(--font-script); font-style:italic; color:var(--ink-soft); margin-bottom:2rem; }
+.countdown-timer{
+  display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;
+}
+.cd-unit{
+  background:var(--maroon);
+  color:var(--ivory);
+  border:1px solid var(--gold);
+  border-radius:14px;
+  min-width:82px;
+  padding:1rem 0.5rem;
+  box-shadow:0 8px 20px var(--shadow);
+}
+.cd-num{
+  display:block; font-family:var(--font-display); font-size:1.9rem; color:var(--gold-light);
+}
+.cd-label{ font-size:0.7rem; letter-spacing:0.06em; color:var(--gold-light); opacity:0.85; }
+.countdown-today{
+  font-family:var(--font-display); font-size:1.8rem; color:var(--red);
+  animation:heartbeat 1.6s ease-in-out infinite;
+}
+
+/* ---------- Events timeline ---------- */
+.events-timeline{
+  display:grid; gap:1.75rem;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  text-align:left;
+}
+.event-card{
+  background:var(--ivory);
+  border:1px solid var(--gold-light);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 26px var(--shadow);
+  opacity:0; transform:translateY(24px);
+  transition:opacity 0.8s ease, transform 0.8s ease;
+}
+.event-card.is-visible{ opacity:1; transform:translateY(0); }
+.event-photo{ aspect-ratio:16/10; overflow:hidden; }
+.event-photo img{ width:100%; height:100%; object-fit:cover; }
+.event-body{ padding:1.4rem 1.5rem; }
+.event-index{ font-family:var(--font-script); font-style:italic; color:var(--gold-deep); font-size:0.95rem; }
+.event-name{ font-family:var(--font-display); color:var(--maroon); font-size:1.25rem; margin:0.2rem 0 0.6rem; }
+.event-meta{ font-size:0.9rem; color:var(--ink-soft); margin:0.15rem 0; }
+.event-desc{ margin-top:0.6rem; font-size:0.95rem; }
+
+/* ---------- Ceremony ---------- */
+.ceremony-section{
+  background:
+    radial-gradient(circle at 50% 0%, rgba(201,162,75,0.14), transparent 60%),
+    var(--maroon-deep);
+  border-radius:0;
+  max-width:none;
+  color:var(--ivory);
+  padding:5.5rem 1.5rem;
+}
+.ceremony-card{ max-width:640px; margin:0 auto; }
+.ceremony-section .section-kicker{ color:var(--gold-light); }
+.ceremony-names{
+  font-family:var(--font-display); font-size:clamp(1.8rem,5vw,2.6rem);
+  color:var(--gold-light); margin:0 0 2.2rem;
+}
+.ceremony-names .amp{ color:var(--gold); font-size:0.7em; }
+.ceremony-details{
+  display:grid; gap:1.2rem; margin-bottom:2.2rem;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  text-align:left;
+  border-top:1px solid rgba(231,206,147,0.25);
+  border-bottom:1px solid rgba(231,206,147,0.25);
+  padding:1.6rem 0;
+}
+.detail-label{
+  display:block; font-family:var(--font-script); font-style:italic; color:var(--gold-light);
+  font-size:0.95rem; margin-bottom:0.2rem;
+}
+.detail-value{ font-size:1rem; }
+.map-pin{ color:var(--maroon-deep); }
+
+/* ---------- Family ---------- */
+.parents-row{
+  display:flex; align-items:flex-start; justify-content:center; gap:2rem; margin-bottom:1rem; flex-wrap:wrap;
+}
+.family-amp{ font-family:var(--font-display); color:var(--gold-deep); font-size:1.6rem; margin-top:60px; }
+.family-card{ width:150px; }
+.family-photo{
+  width:140px; height:140px; border-radius:50%; overflow:hidden;
+  border:3px solid var(--gold); margin:0 auto 0.8rem;
+  box-shadow:0 10px 24px var(--shadow);
+}
+.family-photo img{ width:100%; height:100%; object-fit:cover; }
+.family-name{ font-family:var(--font-display); color:var(--maroon); font-size:1.05rem; margin:0; }
+.family-tagline{
+  font-family:var(--font-script); font-style:italic; color:var(--gold-deep); font-size:1.2rem; margin-bottom:2.5rem;
+}
+.uncle-aunty-row{ margin-bottom:0.8rem; }
+.uncle-aunty-caption{
+  font-family:var(--font-script); font-style:italic; color:var(--ink-soft); font-size:1rem; margin-bottom:3rem;
+}
+.siblings-row{
+  display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:3rem;
+}
+.sibling-card{ width:120px; opacity:0; transform:translateY(20px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.sibling-card.is-visible{ opacity:1; transform:translateY(0); }
+.sibling-photo{
+  width:110px; height:110px; border-radius:50%; overflow:hidden;
+  border:2px solid var(--gold-light); margin:0 auto 0.6rem;
+}
+.sibling-photo img{ width:100%; height:100%; object-fit:cover; }
+.sibling-name{ font-size:0.95rem; color:var(--ink); margin:0; text-align:center; }
+.sibling-role{ font-size:0.8rem; color:var(--ink-soft); margin:0.15rem 0 0; text-align:center; }
+.siblings-group{ max-width:520px; margin:0 auto 2.5rem; }
+.siblings-group-photo{
+  border-radius:16px; overflow:hidden;
+  border:3px solid var(--gold);
+  box-shadow:0 14px 30px var(--shadow);
+  aspect-ratio:4/3;
+}
+.siblings-group-photo img{ width:100%; height:100%; object-fit:cover; }
+.siblings-group-caption{
+  font-family:var(--font-script); font-style:italic; color:var(--gold-deep);
+  margin-top:0.7rem; font-size:1.05rem;
+}
+
+.relatives-invite{
+  max-width:560px; margin:0 auto 2.8rem;
+  background:var(--ivory);
+  border:1px solid var(--gold-light);
+  border-radius:16px;
+  padding:1.8rem 1.6rem;
+  box-shadow:0 8px 20px var(--shadow);
+}
+.relatives-invite h3{
+  font-family:var(--font-display); color:var(--maroon); font-size:1.15rem; margin:0 0 0.6rem;
+}
+.relatives-invite p{ margin:0; color:var(--ink-soft); font-size:1rem; }
+
+.pathange-family-heading{
+  font-family:var(--font-display); color:var(--maroon); font-size:1.3rem;
+  text-align:center; margin:0 0 1.6rem;
+}
+.extra-family-row{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:1.4rem; margin-bottom:2.8rem;
+}
+.extra-family-card{ width:160px; }
+.extra-family-photo{
+  width:160px; height:160px;
+  border-radius:14px;
+  overflow:hidden;
+  border:3px solid var(--gold);
+  box-shadow:0 10px 26px var(--shadow);
+}
+.extra-family-photo img{ width:100%; height:100%; object-fit:cover; }
+
+.family-message{
+  max-width:560px; margin:0 auto; font-family:var(--font-script); font-size:1.2rem; color:var(--ink);
+}
+.family-signature{ margin-top:1.2rem; font-family:var(--font-display); color:var(--maroon); font-size:1.1rem; }
+
+/* ---------- Gallery ---------- */
+.gallery-grid{
+  column-count:1; column-gap:1rem;
+}
+@media(min-width:600px){ .gallery-grid{ column-count:2; } }
+@media(min-width:900px){ .gallery-grid{ column-count:3; } }
+.gallery-item{
+  break-inside:avoid; margin-bottom:1rem; border-radius:12px; overflow:hidden;
+  border:1px solid var(--gold-light); cursor:zoom-in;
+  position:relative;
+  box-shadow:0 8px 20px var(--shadow);
+  transition:transform 0.35s ease, box-shadow 0.35s ease;
+}
+.gallery-item:hover, .gallery-item:focus-visible{ transform:translateY(-4px); box-shadow:0 14px 28px var(--shadow); }
+.gallery-item img{ width:100%; display:block; }
+
+/* ---------- Slideshow ---------- */
+.slideshow{
+  position:relative;
+  max-width:720px;
+  width:100%;
+  margin:0 auto;
+  aspect-ratio:3/4;
+  max-height:88vh;
+  border-radius:18px;
+  overflow:hidden;
+  border:3px solid var(--gold);
+  box-shadow:0 16px 36px var(--shadow);
+  background:var(--maroon-deep);
+}
+.slideshow-track{ position:relative; width:100%; height:100%; }
+.slide{
+  position:absolute; inset:0;
+  opacity:0;
+  transition:opacity 1.1s ease;
+}
+.slide.active{ opacity:1; }
+.slide img{ width:100%; height:100%; object-fit:contain; cursor:zoom-in; }
+.slideshow-nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:rgba(74,13,22,0.45); color:var(--ivory);
+  border:none; border-radius:50%; width:38px; height:38px;
+  font-size:1.1rem; cursor:pointer;
+  transition:background 0.25s ease;
+}
+.slideshow-nav:hover{ background:rgba(74,13,22,0.7); }
+.slideshow-prev{ left:0.7rem; } .slideshow-next{ right:0.7rem; }
+.slideshow-dots{
+  position:absolute; bottom:0.8rem; left:0; right:0;
+  display:flex; justify-content:center; gap:0.5rem;
+}
+.slideshow-dot{
+  width:8px; height:8px; border-radius:50%;
+  background:rgba(251,246,236,0.6); border:1px solid var(--gold);
+  cursor:pointer; padding:0;
+}
+.slideshow-dot.active{ background:var(--gold); }
+
+.lightbox{
+  position:fixed; inset:0; background:rgba(30,10,14,0.92); z-index:200;
+  display:flex; align-items:center; justify-content:center;
+}
+.lightbox[hidden]{ display:none; }
+.lightbox-img{ max-width:88vw; max-height:82vh; border-radius:8px; box-shadow:0 20px 50px rgba(0,0,0,0.5); animation:lbZoom 0.35s ease; }
+@keyframes lbZoom{ from{ transform:scale(0.9); opacity:0;} to{ transform:scale(1); opacity:1; } }
+.lightbox-close{
+  position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; color:var(--ivory); font-size:2rem;
+}
+.lightbox-nav{
+  position:absolute; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--gold-light); font-size:1.8rem; padding:1rem;
+}
+.lightbox-prev{ left:0.5rem; } .lightbox-next{ right:0.5rem; }
+.lightbox.single .lightbox-nav{ display:none; }
+
+/* Site-wide click-to-zoom cursor for real (loaded) photos */
+.portrait-arch img, .family-photo img, .sibling-photo img, .event-photo img,
+.blessing-portrait img, .siblings-group-photo img, .final-photo img,
+.divine-oval-frame img, .extra-family-photo img{
+  cursor:zoom-in;
+}
+
+/* ---------- Story ---------- */
+.story-timeline{ display:grid; gap:2.2rem; max-width:680px; margin:0 auto; text-align:left; }
+.story-item{
+  position:relative; padding-left:1.6rem; border-left:2px solid var(--gold-light);
+}
+.story-item h3{ font-family:var(--font-display); color:var(--maroon); font-size:1.2rem; margin:0 0 0.4rem; }
+.story-item p{ margin:0; color:var(--ink-soft); }
+
+/* ---------- Blessing ---------- */
+.blessing-section{ background:var(--cream); }
+.blessing-text{
+  font-family:var(--font-script); font-style:italic; font-size:1.4rem; max-width:560px; margin:0 auto; color:var(--maroon);
+}
+
+/* ---------- Final couple ---------- */
+.final-section{ max-width:none; padding:0; }
+.final-photo{ position:relative; width:100%; min-height:70vh; overflow:hidden; }
+.final-photo img{ width:100%; height:100%; min-height:70vh; object-fit:cover; }
+.final-overlay{
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:linear-gradient(180deg, rgba(74,13,22,0.15), rgba(74,13,22,0.55));
+  color:var(--ivory); text-align:center; padding:2rem;
+}
+.final-names{ font-family:var(--font-display); font-size:clamp(1.8rem,5vw,2.6rem); margin:0 0 0.6rem; }
+.final-names .heart{ color:var(--red); }
+.final-tag{ font-family:var(--font-script); font-style:italic; font-size:1.3rem; color:var(--gold-light); }
+
+/* ---------- RSVP ---------- */
+.rsvp-form{
+  max-width:480px; margin:0 auto; display:grid; gap:1.2rem; text-align:left;
+}
+.rsvp-form label{ display:grid; gap:0.5rem; font-family:var(--font-display); font-size:0.85rem; color:var(--maroon); }
+.rsvp-form input, .rsvp-form textarea{
+  font-family:var(--font-body); font-size:1rem; padding:0.8rem 1rem;
+  border:1px solid var(--gold-light); border-radius:10px; background:var(--ivory); color:var(--ink);
+}
+.rsvp-form input:focus, .rsvp-form textarea:focus{ border-color:var(--gold-deep); }
+.rsvp-form button{ justify-self:center; margin-top:0.4rem; }
+.rsvp-note{ text-align:center; font-family:var(--font-script); font-style:italic; color:var(--gold-deep); }
+
+/* ---------- Contact ---------- */
+.contact-name{ font-family:var(--font-display); color:var(--maroon); font-size:1.2rem; margin:0.4rem 0 0.1rem; }
+.contact-phone{ color:var(--ink-soft); margin:0 0 1.2rem; }
+
+/* ---------- Footer ---------- */
+.site-footer{
+  position:relative;
+  background:var(--maroon-deep); color:var(--gold-light);
+  text-align:center; padding:4rem 1.5rem; overflow:hidden;
+}
+.footer-thanks{ font-family:var(--font-script); font-style:italic; font-size:1.3rem; margin-bottom:0.6rem; }
+.footer-signature{ font-family:var(--font-display); font-size:1.1rem; color:var(--ivory); }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width:480px){
+  .section{ padding:3.75rem 1.15rem; }
+  .portrait-frame{ width:70vw; max-width:220px; }
+  .cd-unit{ min-width:68px; padding:0.8rem 0.3rem; }
+  .cd-num{ font-size:1.5rem; }
+  .ceremony-details{ padding:1.2rem 0; }
+  .divine-oval{ width:26vw; opacity:0.9; }
+  .beam-inward{ width:18px; }
+  .beam-in-left{ left:-18px; }
+  .beam-in-right{ right:-18px; }
+  .blessing-portrait{ width:76px; height:76px; }
+  .grandparents-row{ gap:1rem; }
+  .couple-foreground{ padding:0.8rem 1.1rem; gap:0.7rem; }
+}
+
