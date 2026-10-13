@@ -30,59 +30,59 @@ const WEDDING_CONFIG = {
   familySurname: "Pathange",
   grandfatherName: "Pathange Balakrishna Rao",
   grandmotherName: "Pathange Anusuya Bai",
-  uncleName: "Naresh",
+  uncleName: "Pathange Naresh",
   auntyName: "Aruna",
 
   // Add or remove siblings freely. "role" is optional and gets translated
   // automatically if you give it an {en, te, kn, hi} object like below.
   siblings: [
     {
-      name: "Mahesh",
+      name: "Pathange Mahesh Rao",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-brother.jpg",
     },
     {
-      name: "Mani Prasad",
+      name: "Pathange Mani Prasad",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-2.jpg",
     },
     {
-      name: "Sandeep",
+      name: "Pathange Sandeep",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-3.jpg",
     },
     {
-      name: "Pranav",
+      name: "Pathange Pranav",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-4.jpg",
     },
     {
-      name: "Nikitha",
+      name: "Pathange Nikitha",
       role: { en: "Sister of the Groom", te: "వరుని సోదరి", kn: "ವರನ ಸಹೋದರಿ", hi: "दूल्हे की बहन" },
       photo: "assets/images/sibling-5.jpg",
     },
     {
-      name: "Sheena",
+      name: "Pathange Sheena",
       role: { en: "Sister of the Groom", te: "వరుని సోదరి", kn: "ವರನ ಸಹೋದರಿ", hi: "दूल्हे की बहन" },
       photo: "assets/images/sibling-6.jpg",
     },
     {
-      name: "Omkar",
+      name: "Pathange Omkar",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-7.jpg",
     },
     {
-      name: "Pavan",
+      name: "Pathange Pavan",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-8.jpg",
     },
     {
-      name: "Shanmuka",
+      name: "Pathange Shanmuka",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-9.jpg",
     },
     {
-      name: "Naga Lakshmi",
+      name: "Pathange Naga Lakshmi",
       role: { en: "Sister of the Groom", te: "వరుని సోదరి", kn: "ವರನ ಸಹೋದರಿ", hi: "दूल्हे की बहन" },
       photo: "assets/images/sibling-10.jpg",
     },
@@ -166,14 +166,12 @@ const WEDDING_CONFIG = {
     { src: "assets/images/gallery-5.jpg", alt: "Engagement photo" },
     { src: "assets/images/gallery-6.jpg", alt: "Pre-wedding photo" },
     { src: "assets/images/gallery-7.jpg", alt: "Family group photo" },
-    { src: "assets/images/gallery-8.jpg", alt: "Family group photo" },
-
   ],
 
   // ---- Contact ----
-  contactName: "Mahesh",
-  contactPhoneDisplay: "+91 7995308828",
-  whatsappNumber: "7995308828", // country code + number, no + or spaces
+  contactName: "Ravi Sharma",
+  contactPhoneDisplay: "+91 98765 43210",
+  whatsappNumber: "919876543210", // country code + number, no + or spaces
   whatsappMessage: "Hello, I would like to know more about the wedding ceremony.",
   // Used only inside the "Send Wishes" button link — never displayed as text anywhere on the page.
   wishesWhatsappNumber: "918121914161",
@@ -914,6 +912,11 @@ function setupIntroOverlay() {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   btn.addEventListener("click", () => {
+    // Start the music as the very first thing, directly inside this tap's
+    // own handler — the most reliable way to satisfy mobile browsers'
+    // user-gesture requirement for audio with sound.
+    tryStartWeddingMusic();
+
     // Spawn a burst of butterflies fluttering outward from the button.
     if (!reduceMotion && butterflyLayer) {
       const count = 14;
@@ -948,48 +951,59 @@ function setupIntroOverlay() {
   });
 }
 
+// Shared, reusable "start the music" action. Mobile browsers are strict
+// about audio only being allowed to start from inside the exact same
+// gesture that triggered it (a tap's own click handler) — they're much
+// less reliable about a delayed/bubbled listener elsewhere. So this is
+// called directly, synchronously, from the Open Invitation tap itself
+// (see setupIntroOverlay), as well as from the music button and a
+// page-wide fallback for anyone who skips that tap.
+function tryStartWeddingMusic() {
+  const audio = document.getElementById("wedding-audio");
+  const btn = document.getElementById("music-toggle");
+  if (!audio || audio.__attemptedStart) return;
+  audio.__attemptedStart = true;
+  audio.play().then(() => {
+    if (!btn) return;
+    btn.classList.add("playing");
+    btn.setAttribute("aria-pressed", "true");
+    btn.setAttribute("aria-label", "Pause wedding music");
+    const icon = btn.querySelector(".music-icon");
+    if (icon) icon.textContent = "\u23F8";
+  }).catch(() => {
+    audio.__attemptedStart = false; // allow the next tap to try again
+  });
+}
+
 function setupMusic() {
   const btn = document.getElementById("music-toggle");
   const audio = document.getElementById("wedding-audio");
   if (!btn || !audio) return;
 
-  const markPlaying = () => {
-    btn.classList.add("playing");
-    btn.setAttribute("aria-pressed", "true");
-    btn.setAttribute("aria-label", "Pause wedding music");
-    btn.querySelector(".music-icon").textContent = "\u23F8";
-  };
-  const markPaused = () => {
-    btn.classList.remove("playing");
-    btn.setAttribute("aria-pressed", "false");
-    btn.setAttribute("aria-label", "Play wedding music");
-    btn.querySelector(".music-icon").textContent = "\u266B";
-  };
-
   btn.addEventListener("click", () => {
     if (audio.paused) {
-      audio.play().then(markPlaying).catch(() => { /* file missing or blocked — silently ignore */ });
+      tryStartWeddingMusic();
     } else {
       audio.pause();
-      markPaused();
+      btn.classList.remove("playing");
+      btn.setAttribute("aria-pressed", "false");
+      btn.setAttribute("aria-label", "Play wedding music");
+      const icon = btn.querySelector(".music-icon");
+      if (icon) icon.textContent = "\u266B";
     }
   });
 
-  // Most mobile/desktop browsers block audio with sound from starting on
-  // page load unless the visitor has interacted with the page first. So:
-  // 1) try to autoplay immediately — works in some browsers/settings.
-  // 2) if that's blocked, start on the very first tap/click/key press
-  //    anywhere on the page instead, which is as close to "automatic" as
-  //    browsers allow.
-  audio.play().then(markPlaying).catch(() => {
-    const startOnFirstInteraction = () => {
-      audio.play().then(markPlaying).catch(() => {});
-      window.removeEventListener("pointerdown", startOnFirstInteraction);
-      window.removeEventListener("keydown", startOnFirstInteraction);
-    };
-    window.addEventListener("pointerdown", startOnFirstInteraction, { once: true });
-    window.addEventListener("keydown", startOnFirstInteraction, { once: true });
-  });
+  // Try immediately on load (works in some browsers/settings), and as a
+  // fallback, on the first tap/click/key press anywhere — in case the
+  // opening overlay was somehow skipped.
+  tryStartWeddingMusic();
+  const retryOnFirstInteraction = () => {
+    tryStartWeddingMusic();
+    window.removeEventListener("pointerdown", retryOnFirstInteraction);
+    window.removeEventListener("keydown", retryOnFirstInteraction);
+  };
+  window.addEventListener("pointerdown", retryOnFirstInteraction, { once: true });
+  window.addEventListener("keydown", retryOnFirstInteraction, { once: true });
 }
 
 /* ===================== RSVP FORM ===================== */

@@ -1004,12 +1004,24 @@ body.intro-active{ overflow:hidden; height:100vh; }
   .cd-unit{ min-width:68px; padding:0.8rem 0.3rem; }
   .cd-num{ font-size:1.5rem; }
   .ceremony-details{ padding:1.2rem 0; }
-  .divine-oval{ width:26vw; opacity:0.9; }
-  .beam-inward{ width:18px; }
-  .beam-in-left{ left:-18px; }
-  .beam-in-right{ right:-18px; }
-  .blessing-portrait{ width:76px; height:76px; }
   .grandparents-row{ gap:1rem; }
-  .couple-foreground{ padding:0.8rem 1.1rem; gap:0.7rem; }
+}
+
+/* On narrow phones the deity backdrop ovals and the groom/bride pill used to
+   sit at the same height and collide. Below this width, shrink both and
+   tighten the gaps so nothing overlaps, however small the screen. */
+@media (max-width:480px){
+  .divine-oval{ width:17vw; max-width:60px; }
+  .beam-inward{ width:8px; }
+  .beam-in-left{ left:-8px; }
+  .beam-in-right{ right:-8px; }
+  .blessing-portrait{ width:52px; height:52px; border-width:2px; }
+  .couple-foreground{ padding:0.55rem 0.7rem; gap:0.4rem; }
+  .blessing-petal{ font-size:0.85rem; }
+}
+@media (max-width:360px){
+  .divine-oval{ width:15vw; max-width:48px; }
+  .blessing-portrait{ width:44px; height:44px; }
+  .couple-foreground{ padding:0.45rem 0.55rem; gap:0.3rem; }
 }
 
