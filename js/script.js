@@ -299,7 +299,7 @@ const TRANSLATIONS = {
     siblingsGroupCaption: "ఎప్పటికీ కలిసి",
     relativesInviteTitle: "మా ప్రియమైన బంధువులకు",
     relativesInviteText: "ఆనందంతో నిండిన హృదయాలతో, దగ్గరి, దూరపు బంధువులందరినీ ఈ దంపతులను ఆశీర్వదించమని ఆప్యాయంగా ఆహ్వానిస్తున్నాము.",
-    uncleAuntyCaption: "వరుని బాబాయి & పెన్నీ",
+    uncleAuntyCaption: "వరుని బాబాయి & పిన్ని",
     uncleAuntyCaption2: "వరుని మేనమామ & అత్త",
     pathangeFamilyHeading: "పతంగె కుటుంబం",
     eldersHeading: "మా పెద్దల ఆశీస్సులతో",
