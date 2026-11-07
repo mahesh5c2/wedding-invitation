@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Wedding Invitation | Arjun &amp; Priya</title>
-<meta name="description" content="You are lovingly invited to the wedding celebrations of Arjun &amp; Priya">
+<title>Wedding Invitation | Yash &amp; Priya</title>
+<meta name="description" content="You are lovingly invited to the wedding celebrations of Yash &amp; Priya">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
