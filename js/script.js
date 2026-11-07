@@ -30,59 +30,59 @@ const WEDDING_CONFIG = {
   familySurname: "Pathange",
   grandfatherName: "Pathange Balakrishna Rao",
   grandmotherName: "Pathange Anusuya Bai",
-  uncleName: "Pathange Naresh",
+  uncleName: "Naresh",
   auntyName: "Aruna",
 
   // Add or remove siblings freely. "role" is optional and gets translated
   // automatically if you give it an {en, te, kn, hi} object like below.
   siblings: [
     {
-      name: "Pathange Mahesh Rao",
+      name: "Mahesh",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-brother.jpg",
     },
     {
-      name: "Pathange Mani Prasad",
+      name: "Prasad",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-2.jpg",
     },
     {
-      name: "Pathange Sandeep",
+      name: "Sandeep",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-3.jpg",
     },
     {
-      name: "Pathange Pranav",
+      name: "Pranav",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-4.jpg",
     },
     {
-      name: "Pathange Nikitha",
+      name: "Nikitha",
       role: { en: "Sister of the Groom", te: "వరుని సోదరి", kn: "ವರನ ಸಹೋದರಿ", hi: "दूल्हे की बहन" },
       photo: "assets/images/sibling-5.jpg",
     },
     {
-      name: "Pathange Sheena",
+      name: "Sheena",
       role: { en: "Sister of the Groom", te: "వరుని సోదరి", kn: "ವರನ ಸಹೋದರಿ", hi: "दूल्हे की बहन" },
       photo: "assets/images/sibling-6.jpg",
     },
     {
-      name: "Pathange Omkar",
+      name: "Omkar",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-7.jpg",
     },
     {
-      name: "Pathange Pavan",
+      name: "Pavan",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-8.jpg",
     },
     {
-      name: "Pathange Shanmuka",
+      name: "Shanmuka",
       role: { en: "Brother of the Groom", te: "వరుని సోదరుడు", kn: "ವರನ ಸಹೋದರ", hi: "दूल्हे का भाई" },
       photo: "assets/images/sibling-9.jpg",
     },
     {
-      name: "Pathange Naga Lakshmi",
+      name: "Naga Lakshmi",
       role: { en: "Sister of the Groom", te: "వరుని సోదరి", kn: "ವರನ ಸಹೋದರಿ", hi: "दूल्हे की बहन" },
       photo: "assets/images/sibling-10.jpg",
     },
@@ -105,8 +105,8 @@ const WEDDING_CONFIG = {
   // Extra Pathange family members (shown under the "Pathange Family" heading).
   // Add, remove, or rename freely — just give each a name and a photo path.
   extraFamily: [
-    { name: "Family Member 1", photo: "assets/images/family-1.jpg" },
-    { name: "Family Member 2", photo: "assets/images/family-2.jpg" },
+    { name: "Family Members", photo: "assets/images/family-1.jpg" },
+    { name: "Family Members", photo: "assets/images/family-2.jpg" },
   ],
 
   // A single group photo of all siblings together (used in the Family section)
@@ -136,14 +136,14 @@ const WEDDING_CONFIG = {
   events: [
     {
       name: { en: "Engagement", te: "నిశ్చితార్థం", kn: "ನಿಶ್ಚಿತಾರ್ಥ", hi: "सगाई" },
-      date: "10 December 2026", time: "6:00 PM",
+      date: "18 December 2026", time: "8:00 PM",
       venue: { en: "Pathange Residence, Jammalamadugu", te: "పతంగె నివాసం, జమ్మలమడుగు", kn: "ಪತಂಗೆ ನಿವಾಸ, ಜಮ್ಮಲಮಡುಗು", hi: "पतंगे निवास, जम्मलमडुगु" },
       description: { en: "An intimate ceremony where the families exchange rings and blessings.", te: "కుటుంబాలు ఉంగరాలు, ఆశీస్సులు మార్చుకునే ఆత్మీయ కార్యక్రమం.", kn: "ಕುಟುಂಬಗಳು ಉಂಗುರ ಮತ್ತು ಆಶೀರ್ವಾದಗಳನ್ನು ವಿನಿಮಯ ಮಾಡಿಕೊಳ್ಳುವ ಆತ್ಮೀಯ ಕಾರ್ಯಕ್ರಮ.", hi: "एक आत्मीय समारोह जहाँ परिवार अंगूठियां और आशीर्वाद का आदान-प्रदान करते हैं।" },
       photo: "assets/images/event-engagement.jpg",
     },
     {
       name: { en: "Haldi", te: "హల్దీ", kn: "ಅರಿಶಿನ (ಹಲ್ದಿ)", hi: "हल्दी" },
-      date: "11 December 2026", time: "9:00 AM",
+      date: "19 December 2026", time: "5:00 AM",
       venue: { en: "Pathange Residence, Jammalamadugu", te: "పతంగె నివాసం, జమ్మలమడుగు", kn: "ಪತಂಗೆ ನಿವಾಸ, ಜಮ್ಮಲಮಡುಗು", hi: "पतंगे निवास, जम्मलमडुगु" },
       description: { en: "A joyful turmeric ceremony filled with music, laughter and blessings.", te: "సంగీతం, నవ్వులు, ఆశీస్సులతో నిండిన సంతోషకరమైన పసుపు వేడుక.", kn: "ಸಂಗೀತ, ನಗು ಮತ್ತು ಆಶೀರ್ವಾದಗಳಿಂದ ತುಂಬಿದ ಸಂತೋಷದ ಅರಿಶಿನ ಕಾರ್ಯಕ್ರಮ.", hi: "संगीत, हंसी और आशीर्वाद से भरा एक आनंदमय हल्दी समारोह।" },
       photo: "assets/images/event-haldi.jpg",
@@ -166,6 +166,7 @@ const WEDDING_CONFIG = {
     { src: "assets/images/gallery-5.jpg", alt: "Engagement photo" },
     { src: "assets/images/gallery-6.jpg", alt: "Pre-wedding photo" },
     { src: "assets/images/gallery-7.jpg", alt: "Family group photo" },
+    { src: "assets/images/gallery-8.jpg", alt: "Family group photo" }
   ],
 
   // ---- Contact ----
